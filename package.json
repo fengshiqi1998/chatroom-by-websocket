@@ -1,0 +1,24 @@
+{
+  "name": "chatroom-by-websocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengshiqi1998/chatroom-by-websocket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fengshiqi1998/chatroom-by-websocket/issues"
+  },
+  "homepage": "https://github.com/fengshiqi1998/chatroom-by-websocket#readme",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "ws": "^7.4.4"
+  }
+}

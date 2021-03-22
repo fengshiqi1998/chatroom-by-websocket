@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone</title>
+  </head>
+  <body>
+    <textarea class="chat-content" name="" id="" cols="30" rows="10"></textarea>
+    <br />
+    <input type="text" class="chat-input" />
+    <button class="chat-send">send</button>
+  </body>
+  <script>
+    var socket = new WebSocket('ws://localhost:3100');
+    var content = document.querySelector('.chat-content');
+    var text = document.querySelector('.chat-input');
+
+    function socketSend(message) {
+      if (socket.readyState == WebSocket.OPEN) {
+        if (!message) {
+          message = 'nothing';
+        }
+        var data = {
+          username: 'phone_1',
+          message: message,
+        };
+        socket.send(JSON.stringify(data));
+      } else {
+        alert('连接没有开启.');
+      }
+    }
+
+    document.querySelector('.chat-send').addEventListener('click', function () {
+      socketSend(text.value);
+    });
+
+    socket.onopen = function (event) {
+      socketSend('come in');
+    };
+    socket.onmessage = function (event) {
+      var data = event.data;
+      content.innerHTML += data + '\n';
+    };
+    socket.onclose = function (event) {
+      socketSend('leave');
+    };
+  </script>
+</html>
