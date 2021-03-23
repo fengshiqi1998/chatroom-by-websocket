@@ -5,6 +5,7 @@
     <title>Mac</title>
   </head>
   <body>
+    Mac 2:
     <textarea class="chat-content" name="" id="" cols="30" rows="10"></textarea>
     <br />
     <input type="text" class="chat-input" />
@@ -14,7 +15,6 @@
     var socket = new WebSocket('ws://localhost:3100');
     var content = document.querySelector('.chat-content');
     var text = document.querySelector('.chat-input');
-
     function socketSend(message) {
       if (socket.readyState == WebSocket.OPEN) {
         if (!message) {

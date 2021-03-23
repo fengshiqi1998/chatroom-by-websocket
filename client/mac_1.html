@@ -5,6 +5,7 @@
     <title>Mac</title>
   </head>
   <body>
+    Mac 1:
     <textarea class="chat-content" name="" id="" cols="30" rows="10"></textarea>
     <br />
     <input type="text" class="chat-input" />
@@ -32,6 +33,7 @@
 
     document.querySelector('.chat-send').addEventListener('click', function () {
       socketSend(text.value);
+      text.value = '';
     });
 
     socket.onopen = function (event) {
