@@ -50,7 +50,7 @@ server.on('connection', (ws, req) => {
                 name: client,
                 socket: ws,
               },
-              phone: {},
+              phone: '',
             };
             roomList.push(room);
             curRoom = room;
@@ -87,7 +87,7 @@ server.on('connection', (ws, req) => {
                 name: client,
                 socket: ws,
               },
-              mac: {},
+              mac: '',
             };
             roomList.push(room);
             curRoom = room;
